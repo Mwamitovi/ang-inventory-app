@@ -34,4 +34,8 @@ export class AppComponent {
         155000)
     ];
   }
+
+  productWasSelected(product: Product): void {
+    console.log('Product clicked: ', product);
+  }
 }
