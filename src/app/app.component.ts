@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Product } from './product.model';
 
+/**
+ * @inventory-app: the top level component for our application
+ */
 
 @Component({
   selector: 'app-root',
@@ -8,7 +11,6 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ang-inventory-app';
 
   products: Product[];
 
