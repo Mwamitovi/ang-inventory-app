@@ -1,5 +1,5 @@
 
-A Single-Page-App (SPA) to showcase Product Stock
+A Single-Page-App (SPA) to manage Product Stock
 =================================================
 
 ## SYNOPSIS
