@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from './product.model';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ang-inventory-app';
+
+  products: Product[];
+
+  constructor () {
+    this.products = [];
+  }
 }
