@@ -9,7 +9,7 @@ import { Product } from '../product.model';
   selector: 'app-product-image',
   // templateUrl: './product-image.component.html',
   template: `
-    <img class="product-image" [src]="product.imageUrl"
+    <img class="product-image" [src]="product.imageUrl">
   `,
   styleUrls: ['./product-image.component.css']
 })
