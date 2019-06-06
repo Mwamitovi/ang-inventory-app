@@ -13,15 +13,37 @@ import { Product } from '../product.model';
 })
 export class ProductsListComponent implements OnInit {
 
-  // @input productList - the Product[] passed to us
+  // @input productList:
+  // the Product[] passed to us
   @Input()  productList: Product[];
 
-  // @output whenProductSelected - outputs the current Product
-  // whenever a new Product is selected
+  // @output whenProductSelected:
+  // outputs the current Product whenever a new Product is selected
   @Output() whenProductSelected: EventEmitter<Product>;
 
-  constructor() { }
+  // @property currentProduct:
+  // local state containing the currently selected `Product`
+  private currentProduct: Product;
 
-  ngOnInit() {
+  constructor() {
+    this.whenProductSelected = new EventEmitter();
+  }
+
+  ngOnInit() { }
+
+  // method sets "private" currentProduct to the product passed in
+  // and emits product that was clicked on our output
+  clicked(product: Product): void {
+    this.currentProduct = product;
+    this.whenProductSelected.emit(product);
+  }
+
+  // accepts a product argument,
+  // returns true if product's sku matches the currentProduct's sku
+  isSelected(product: Product): boolean {
+    if (!product || !this.currentProduct) {
+      return false;
+    }
+    return product.sku === this.currentProduct.sku;
   }
 }
